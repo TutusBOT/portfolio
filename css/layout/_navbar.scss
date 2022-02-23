@@ -1,0 +1,88 @@
+@use "../abstracts" as *;
+
+.navbar {
+	position: fixed;
+	top: 50%;
+	left: 3%;
+	transform: translateY(-50%);
+	@include flex-center;
+	flex-direction: column;
+	gap: 10ch;
+	color: $color-text-main;
+	font-size: $font-size-smaller;
+	font-family: $font-title;
+	width: 1rem;
+	justify-self: center;
+	a {
+		height: 1rem;
+		cursor: pointer;
+		position: relative;
+		&:hover::after {
+			width: 100%;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: -3px;
+			width: 2ch;
+			height: 3px;
+			background-color: $color-text-main;
+			transition: width 400ms ease-in-out;
+		}
+	}
+}
+
+.social {
+	position: fixed;
+	bottom: 10%;
+	left: calc(3.5% - 18px);
+	@include flex-center;
+	flex-direction: column;
+	img {
+		position: relative;
+		width: 35px;
+	}
+	@include media($breakpoint-medium) {
+		max-width: 25px;
+		left: 1%;
+	}
+}
+
+.scrolldown {
+	color: $color-text-main !important;
+	font-size: $font-size-small;
+	font-family: $font-title;
+	animation: 1000ms jumping infinite ease-in;
+	margin-bottom: 20px;
+}
+
+@keyframes jumping {
+	0% {
+		transform: translateY(-15%);
+	}
+	50% {
+		transform: translateY(15%);
+	}
+	100% {
+		transform: translateY(-15%);
+	}
+}
+
+@keyframes navbar-after-start {
+	from {
+		width: 2ch;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes navbar-after-stop {
+	from {
+		width: 100%;
+	}
+	to {
+		width: 2ch;
+	}
+}

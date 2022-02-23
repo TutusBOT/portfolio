@@ -1,0 +1,36 @@
+@use "../abstracts" as *;
+
+h1 {
+	font-size: $font-size-big;
+	font-family: $font-title;
+	color: $color-text-main;
+}
+h2 {
+	font-size: $font-size-medium;
+	font-family: $font-title;
+	color: $color-text-main;
+}
+h3 {
+	font-size: 4rem;
+	font-family: $font-title;
+	color: $color-text-main;
+}
+h4 {
+	font-size: calc(2vw + 1em);
+	font-family: $font-title;
+	color: $color-text-main;
+}
+h5 {
+	font-size: calc(1vw + 1em);
+	font-family: $font-title;
+	color: $color-text-main;
+}
+
+.rotatetext {
+	transform: rotate(-90deg);
+	height: 1em;
+}
+
+.red {
+	color: $color-red;
+}

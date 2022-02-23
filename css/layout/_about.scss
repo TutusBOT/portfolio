@@ -1,0 +1,134 @@
+@use "../abstracts" as *;
+
+.about-description {
+	grid-column: 2 / 6;
+	grid-row: 2 / 3;
+	font-family: $font-title;
+	@include background-tile;
+	height: fit-content;
+	width: fit-content;
+	white-space: nowrap;
+	@include paddingradius(1rem);
+	color: $color-text-main;
+	font-size: $font-size-medium;
+}
+
+.about-skills-title {
+	grid-column: 6 / 8;
+	align-self: end;
+	@include background-tile;
+	@include paddingradius(0.8rem);
+	color: $color-text-main;
+}
+
+.about-skills {
+	position: relative;
+	grid-column: 5 / 11;
+	grid-row: 1 / 2;
+	align-self: end;
+	width: 100%;
+	@include paddingradius(0.8rem);
+	font-size: $font-size-small;
+	font-family: $font-title;
+	color: $color-text-main;
+	.about-skills-bg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-family: $font-title;
+		font-size: $font-size-large;
+		line-height: 1;
+		color: transparent;
+		@include noise;
+		background-clip: text;
+		z-index: -1;
+		opacity: 0;
+	}
+	ul {
+		@include flex-center;
+		gap: 1rem;
+	}
+	@include media($breakpoint-medium) {
+		grid-column: 2/10;
+		ul {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			justify-items: center;
+		}
+	}
+}
+
+.about-design {
+	grid-area: 3/2/4/5;
+	align-self: start;
+	@include paddingradius(1rem);
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	font-size: $font-size-medium;
+	font-family: $font-title;
+	color: $color-text-main;
+	white-space: nowrap;
+	.about-design-bg {
+		position: absolute;
+		font-size: $font-size-large;
+		line-height: 1;
+		color: transparent;
+		@include noise;
+		background-clip: text;
+		z-index: -1;
+		opacity: 0;
+	}
+	@include media($breakpoint-medium) {
+		grid-column: 2/10;
+	}
+}
+
+.diamond4 {
+	grid-area: 2/4/3/5;
+	justify-self: end;
+	align-self: start;
+	transform: scale(0.6);
+	transition: transform 300ms ease-in-out;
+	&:hover {
+		transform: scale(0.75);
+	}
+}
+
+.diamond5 {
+	grid-area: 3/6/4/7;
+	justify-self: end;
+	align-self: start;
+	transform: scale(1);
+	transition: transform 300ms ease-in-out;
+	&:hover {
+		transform: scale(1.1);
+	}
+	@include media($breakpoint-medium) {
+		display: none;
+	}
+}
+
+.diamond6 {
+	grid-area: 2/10/3/11;
+	justify-self: start;
+	align-self: end;
+	transform: scale(0.5);
+	transition: transform 300ms ease-in-out;
+	&:hover {
+		transform: scale(0.7);
+	}
+}
+
+.diamond7 {
+	grid-area: 3/8/4/9;
+	justify-self: end;
+	align-self: end;
+	transform: scale(0.8);
+	transition: transform 300ms ease-in-out;
+	&:hover {
+		transform: scale(0.9);
+	}
+}

@@ -1,0 +1,40 @@
+@use "../abstracts" as *;
+
+.container {
+	@include fullscreen;
+	overflow-x: hidden;
+	display: grid;
+	justify-items: center;
+	grid-template-columns: repeat(10, 1fr);
+	.intro-hi {
+		grid-column: 2 / 3;
+		margin-left: 15%;
+	}
+	.intro-i {
+		grid-column: 4 / 5;
+		grid-row: 2 / 3;
+	}
+	.intro-am {
+		grid-column: 6 / 7;
+		margin-left: 15%;
+	}
+	.intro-bartek {
+		grid-column: 8 / 11;
+		grid-row: 3 / 4;
+	}
+	.intro-webdev {
+		align-self: top;
+		justify-self: start;
+		grid-column: 2 / 3;
+		grid-row: 3 / 4;
+	}
+	.navbar {
+		grid-column: 1 / 2;
+		grid-row: 2 / 3;
+	}
+	.scrolldown {
+		grid-column: 5 / 7;
+		grid-row: 3 / 4;
+		align-self: end;
+	}
+}

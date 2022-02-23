@@ -1,0 +1,27 @@
+@use "../abstracts" as *;
+
+.footer {
+	width: 100%;
+	@include flex-center;
+	flex-direction: column;
+	color: $color-text-main;
+	font-size: $font-size-smaller;
+	font-family: $font-accent;
+	padding-bottom: 1em;
+	gap: 1em;
+	a {
+		position: relative;
+		&::after {
+			@include pseudoel;
+			bottom: 0;
+			left: 0;
+			width: 10%;
+			height: 1px;
+			background-color: $color-text-main;
+			transition: width 300ms ease-in-out;
+		}
+		&:hover::after {
+			width: 100%;
+		}
+	}
+}

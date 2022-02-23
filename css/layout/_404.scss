@@ -1,0 +1,36 @@
+@use "../abstracts" as *;
+
+.body-404 {
+	@include fullscreen;
+	@include flex-center;
+	text-align: center;
+}
+
+.navbar-404 {
+	position: absolute;
+	top: 5%;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	color: $color-text-main;
+	font-size: $font-size-medium;
+	font-family: $font-title;
+	width: fit-content;
+	a {
+		cursor: pointer;
+		position: relative;
+		&:hover::after {
+			width: 100%;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: -3px;
+			width: 2ch;
+			height: 3px;
+			background-color: $color-text-main;
+			transition: width 400ms ease-in-out;
+		}
+	}
+}

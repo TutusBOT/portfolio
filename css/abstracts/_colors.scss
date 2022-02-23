@@ -1,0 +1,17 @@
+$color-background-main: #000;
+$color-text-main: #f2f2f2;
+$color-background-accent: #3d2c2c;
+$color-red: #c40d00;
+
+$color-html: #e34c26;
+$color-css: #3c99dc;
+$color-js: #f0db4f;
+$color-scss: #cd6799;
+$color-git: #f1502f;
+$color-php: #787cb5;
+$color-mysql: #007b8f;
+$color-photoshop: #3c327b;
+
+@mixin background-tile {
+	background-color: rgba($color-background-accent, 0.75);
+}
