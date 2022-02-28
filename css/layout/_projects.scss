@@ -115,6 +115,7 @@
 .project-description {
 	font-family: $font-accent;
 	color: $color-text-main;
+	line-height: 1.8;
 }
 
 .wrapper-project {
@@ -141,14 +142,16 @@
 .project1 {
 	grid-area: 2/6/3/10;
 }
-
+.project1a {
+	grid-area: 3/2/4/6;
+}
 .project2 {
-	grid-column: 2 / 6;
+	grid-column: 6 / 10;
 	margin-top: 1em;
 }
 
 .project3 {
-	grid-area: 2/6/3/10;
+	grid-area: 2/2/3/6;
 }
 
 .project {
