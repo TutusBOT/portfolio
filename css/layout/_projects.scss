@@ -190,7 +190,7 @@
 .project-mockup {
 	z-index: -1;
 	max-height: 350px;
-	box-shadow: 25px 25px 0px -3px rgba(#000, 0.2);
+	box-shadow: 25px 25px 0px -3px rgba(#000, 0.25);
 	border-radius: 1em;
 	@include media($breakpoint-medium) {
 		display: none;
@@ -216,4 +216,23 @@
 .project,
 .project-mockup {
 	margin-top: 1rem;
+}
+
+.other-projects {
+	grid-area: 3/3/4/9;
+	align-self: end;
+	color: $color-text-main;
+	font-size: $font-size-big;
+	font-family: $font-accent;
+	text-align: center;
+	&:hover {
+		color: $color-text-main;
+	}
+	&::after {
+		height: 4px;
+		transition: width 600ms ease-in-out;
+	}
+	@include media($breakpoint-medium) {
+		font-size: $font-size-medium;
+	}
 }
