@@ -6,6 +6,7 @@
 	display: grid;
 	justify-items: center;
 	grid-template-columns: repeat(10, 1fr);
+	row-gap: 0.5em;
 	.intro-hi {
 		grid-column: 2 / 3;
 		margin-left: 15%;
