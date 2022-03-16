@@ -145,10 +145,16 @@
 }
 .project1a {
 	grid-area: 3/2/4/6;
+	.project-tech {
+		@include media(400px) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 0.25em;
+		}
+	}
 }
 .project2 {
 	grid-area: 1/6/2/10;
-	margin-top: 1em;
 }
 
 .project3 {
@@ -189,7 +195,7 @@
 
 .project-mockup {
 	z-index: -1;
-	max-height: 350px;
+	max-height: 325px;
 	box-shadow: 25px 25px 0px -3px rgba(#000, 0.25);
 	border-radius: 1em;
 	@include media($breakpoint-medium) {
@@ -198,19 +204,19 @@
 }
 
 .mockup1 {
-	grid-area: 2/2/3/7;
+	grid-area: 2/2/3/6;
 }
 
 .mockup2 {
-	grid-area: 3/6/4/11;
+	grid-area: 3/6/4/10;
 }
 
 .mockup3 {
-	grid-area: 1/2/2/7;
+	grid-area: 1/2/2/6;
 }
 
 .mockup4 {
-	grid-area: 2/6/3/11;
+	grid-area: 2/6/3/10;
 }
 
 .project,
