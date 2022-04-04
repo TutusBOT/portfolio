@@ -23,7 +23,7 @@ setTimeout(() => {
 		duration: 2.5,
 		ease: "power4.in",
 	});
-}, 1000);
+}, 100);
 
 gsap.to(".scrolldown", {
 	scrollTrigger: {
