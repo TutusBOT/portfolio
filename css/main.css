@@ -913,6 +913,37 @@
   transition: width 400ms ease-in-out;
 }
 
+.otherprojects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #f2f2f2;
+  text-align: center;
+  padding-inline: 3em;
+}
+
+.otherprojects-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2em;
+  justify-content: center;
+  width: 100%;
+  padding: 1em;
+}
+
+.otherprojects-project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  border-radius: 0.5em;
+  background-color: #3d2c2c;
+  font-family: "Lato", sans-serif;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

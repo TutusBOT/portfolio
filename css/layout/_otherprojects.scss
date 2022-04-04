@@ -1,0 +1,28 @@
+@use "../abstracts/" as *;
+
+.otherprojects {
+	@include flex-center;
+	flex-direction: column;
+	color: $color-text-main;
+	text-align: center;
+	padding-inline: 3em;
+}
+
+.otherprojects-wrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 2em;
+	justify-content: center;
+	width: 100%;
+	padding: 1em;
+}
+
+.otherprojects-project {
+	@include flex-center;
+	flex-direction: column;
+	padding-inline: 1rem;
+	padding-block: 0.5rem;
+	border-radius: 0.5em;
+	background-color: $color-background-accent;
+	font-family: $font-title;
+}
