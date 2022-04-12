@@ -2,6 +2,8 @@
 
 .container {
 	@include fullscreen;
+	// width: 100%;
+	// min-height: 100vw;
 	overflow-x: hidden;
 	display: grid;
 	justify-items: center;
@@ -37,5 +39,11 @@
 		grid-column: 5 / 7;
 		grid-row: 3 / 4;
 		align-self: end;
+	}
+}
+
+.container-bigger {
+	@include media($breakpoint-medium) {
+		height: 115vh;
 	}
 }
