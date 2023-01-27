@@ -1,0 +1,21 @@
+.shine {
+	position: relative;
+	overflow: hidden;
+}
+
+.shine::after {
+	content: "";
+	top: 0;
+	left: -110%;
+	position: absolute;
+	background-color: white;
+	opacity: 10%;
+	width: 150%;
+	height: 50%;
+	transform: rotate(-60deg);
+}
+
+.shine:hover::after {
+	transition: transform 1s ease-in-out;
+	transform: translateX(210%) rotate(-60deg);
+}
