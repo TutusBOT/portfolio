@@ -8,7 +8,7 @@ module.exports = {
 				"purple-light": "#987EF1",
 				black: "#181818",
 				"black-light": "#1E1E1E",
-				green: "#3B8B79",
+				"black-dark": "#101010",
 			},
 			fontFamily: {
 				comforta: ["Comfortaa", "cursive"],
