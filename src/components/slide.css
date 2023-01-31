@@ -1,0 +1,19 @@
+.slider-container {
+	overflow: hidden;
+	position: relative;
+}
+
+.slider-container:hover > .slider {
+	top: 0;
+	opacity: 0.9;
+}
+
+.slider {
+	top: 100%;
+	position: absolute;
+	transition: all 0.2s ease-out;
+	height: 100%;
+	background-color: #1e1e1e;
+	width: 100%;
+	opacity: 0;
+}
