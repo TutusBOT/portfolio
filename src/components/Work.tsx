@@ -9,15 +9,18 @@ const Work = () => {
 	);
 
 	return (
-		<section className="w-full max-w-full flex flex-col gap-16" id="work">
-			<h2 className="text-4xl text-center flex justify-center px-4">
-				<span className="w-max relative after:absolute after:top-full after:left-0 after:w-full after:h-1 after:bg-purple after:content-['']">
+		<section
+			className="w-full max-w-full flex flex-col gap-16 px-8 py-24"
+			id="work"
+		>
+			<h2 className="text-4xl text-center flex justify-center">
+				<span className="w-max relative after:absolute after:top-[110%] after:left-0 after:w-full after:h-1 after:bg-purple after:content-['']">
 					My projects
 				</span>
 			</h2>
 			<p className="text-center text-xl">
 				Here you will find some of my personal projects that I created. Each one
-				of them is self-hosted on Linux using Docker.
+				of them is self-hosted on Linux using <strong>Docker</strong>.
 			</p>
 			<div className="grid items-center justify-center md:px-16">
 				{projects.data
