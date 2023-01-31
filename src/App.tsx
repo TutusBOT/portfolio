@@ -1,15 +1,15 @@
-import { About, Background, Contact, Main, NavBar, Work } from "./components";
+import { About, Cursor, Footer, Main, NavBar, Work } from "./components";
 import "./index.css";
 
 function App() {
 	return (
 		<div className="w-screen bg-black text-white font-comforta overflow-hidden flex flex-col max-w-full">
-			<Background />
+			<Cursor />
 			<NavBar />
 			<Main />
 			<About />
 			<Work />
-			<Contact />
+			<Footer />
 		</div>
 	);
 }
