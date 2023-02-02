@@ -11,10 +11,10 @@ const Main = () => {
 	return (
 		<main className="w-full h-screen" id="home">
 			<div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full px-8 flex flex-col items-center gap-6">
-				<h1 className="text-4xl sm:text-5xl md:text-7xl">
+				<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl">
 					<span className="text-purple">Hi, I&#39;m</span> Bartłomiej Tutak.
 				</h1>
-				<h2 className="text-xl md:text-2xl max-w-[50ch]">
+				<h2 className="text-lg sm:text-xl md:text-2xl max-w-[50ch]">
 					{main.data ? main.data.data.description : null}
 				</h2>
 				<Link
