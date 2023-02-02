@@ -1,4 +1,12 @@
-import { About, Cursor, Footer, Main, NavBar, Work } from "./components";
+import {
+	About,
+	Contact,
+	Cursor,
+	Footer,
+	Main,
+	NavBar,
+	Work,
+} from "./components";
 import "./index.css";
 
 function App() {
@@ -9,6 +17,7 @@ function App() {
 			<Main />
 			<About />
 			<Work />
+			<Contact />
 			<Footer />
 		</div>
 	);

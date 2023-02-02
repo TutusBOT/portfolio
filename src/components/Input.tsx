@@ -1,21 +1,19 @@
 interface Input {
 	label: string;
 	id: string;
-	type?: "email";
+	type?: string;
 }
 
 const Input = ({ label, id, type }: Input) => {
 	return (
-		<>
-			<label htmlFor={id} className="text-xl">
-				{label}
-			</label>
+		<div className="flex flex-col max-w-3xl w-full">
+			<label htmlFor={id}>{label}</label>
 			<input
 				id={id}
 				type={type || "text"}
-				className="bg-transparent border-black border-2 outline-none text-xl p-2 max-w-[360px]"
+				className="bg-transparent border-white border-2 outline-none text-lg p-2 w-full"
 			></input>
-		</>
+		</div>
 	);
 };
 export default Input;

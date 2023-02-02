@@ -29,22 +29,25 @@ const NavBar = () => {
 	};
 
 	return (
-		<nav className="w-full fixed flex justify-between items-center py-8 px-4 lg:px-16 text-lg lg:text-xl bg-black-dark z-10">
-			<a href="mailto:bartlomiej.tutak0@gmail.com">
+		<nav className="w-full fixed flex justify-between items-center py-8 px-4 lg:px-16 text-lg lg:text-xl bg-black-dark z-10 shadow-xl">
+			<a
+				href="mailto:bartlomiej.tutak0@gmail.com"
+				className="hover:text-purple transition-colors"
+			>
 				bartlomiej.tutak0@gmail.com
 			</a>
 
 			<ul className="hidden md:flex gap-8 uppercase">
-				<li>
+				<li className="hover:text-purple transition-colors">
 					<a href="#home">Home</a>
 				</li>
-				<li>
+				<li className="hover:text-purple transition-colors">
 					<a href="#about">About</a>
 				</li>
-				<li>
+				<li className="hover:text-purple transition-colors">
 					<a href="#work">Work</a>
 				</li>
-				<li>
+				<li className="hover:text-purple transition-colors">
 					<a href="#contact">Contact</a>
 				</li>
 			</ul>
