@@ -1,5 +1,4 @@
 import Link from "./Link/Link";
-import "./slide.css";
 
 export interface ProjectI {
 	title: string;
