@@ -11,6 +11,8 @@ import About from "./About";
 import Footer from "./Footer";
 import Cursor from "./Cursor";
 import SideBar from "./SideBar";
+import SnackBar from "./SnackBar";
+import Skeleton from "./Skeleton";
 
 export {
 	NavBar,
@@ -26,4 +28,6 @@ export {
 	Footer,
 	Cursor,
 	SideBar,
+	SnackBar,
+	Skeleton,
 };
