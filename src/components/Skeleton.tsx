@@ -3,6 +3,6 @@ interface Skeleton {
 }
 
 const Skeleton = ({ className }: Skeleton) => {
-	return <div className={`${className} animate-pulse bg-gray-400`}></div>;
+	return <div className={`${className} animate-pulse bg-neutral-800`}></div>;
 };
 export default Skeleton;
