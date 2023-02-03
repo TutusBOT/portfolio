@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Link from "./Link/Link";
 import SideBar from "./SideBar";
+import Skeleton from "./Skeleton";
 
 const Main = () => {
 	const main = useQuery(["main"], () =>
@@ -15,7 +16,11 @@ const Main = () => {
 					<span className="text-purple">Hi, I&#39;m</span> Bartłomiej Tutak.
 				</h1>
 				<h2 className="text-lg sm:text-xl md:text-2xl max-w-[50ch]">
-					{main.data ? main.data.data.description : null}
+					{main.data ? (
+						main.data.data.description
+					) : (
+						<Skeleton className="h-4 sm:h-5 md:6 w-[50ch]" />
+					)}
 				</h2>
 				<Link
 					text="MY WORK"

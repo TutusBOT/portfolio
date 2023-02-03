@@ -4,6 +4,7 @@ import axios from "axios";
 import { useInView, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Project, { ProjectI } from "./Project";
+import Skeleton from "./Skeleton";
 
 const Work = () => {
 	const ref = useRef(null);
@@ -37,22 +38,24 @@ const Work = () => {
 				<strong>Docker Compose</strong>.
 			</p>
 			<div className="grid items-center justify-center md:px-16">
-				{projects.data
-					? projects.data.data.map((project: ProjectI) => {
-							return (
-								<Project
-									key={project.id}
-									description={project.description}
-									image={project.image}
-									title={project.title}
-									technologies={project.technologies}
-									github={project.github}
-									live={project.live}
-									id={project.id}
-								/>
-							);
-					  })
-					: null}
+				{projects.data ? (
+					projects.data.data.map((project: ProjectI) => {
+						return (
+							<Project
+								key={project.id}
+								description={project.description}
+								image={project.image}
+								title={project.title}
+								technologies={project.technologies}
+								github={project.github}
+								live={project.live}
+								id={project.id}
+							/>
+						);
+					})
+				) : (
+					<Skeleton className="w-[300px] md:w-[450px] max-w-md h-[450px]" />
+				)}
 			</div>
 		</motion.section>
 	);

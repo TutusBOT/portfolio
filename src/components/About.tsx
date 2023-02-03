@@ -4,6 +4,7 @@ import axios from "axios";
 import { useInView, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Link from "./Link/Link";
+import Skeleton from "./Skeleton";
 
 const About = () => {
 	const ref = useRef(null);
@@ -33,7 +34,11 @@ const About = () => {
 				About me
 			</h2>
 			<p className="text-xl -mt-8 text-center">
-				{about.data ? about.data.data.short_description : null}
+				{about.data ? (
+					about.data.data.short_description
+				) : (
+					<Skeleton className="w-[50ch] h-5" />
+				)}
 			</p>
 			<div className="grid md:grid-cols-2 gap-32">
 				<div className="flex flex-col gap-6 md:max-w-lg">
@@ -58,18 +63,31 @@ const About = () => {
 				<div className="md:max-w-lg flex flex-col gap-6">
 					<h3 className="text-2xl">My skills</h3>
 					<ul className="max-w-full flex flex-wrap gap-3">
-						{about.data
-							? about.data.data.skills.map((skill: string) => {
-									return (
-										<li
-											key={skill}
-											className="bg-black-light px-4 py-2 text-sm lg:text-lg w-max"
-										>
-											{skill}
-										</li>
-									);
-							  })
-							: null}
+						{about.data ? (
+							about.data.data.skills.map((skill: string) => {
+								return (
+									<li
+										key={skill}
+										className="bg-black-light px-4 py-2 text-sm lg:text-lg w-max"
+									>
+										{skill}
+									</li>
+								);
+							})
+						) : (
+							<>
+								<Skeleton className="h-8 w-20" />
+								<Skeleton className="h-8 w-20" />
+								<Skeleton className="h-8 w-20" />
+								<Skeleton className="h-8 w-20" />
+								<Skeleton className="h-8 w-20" />
+								<Skeleton className="h-8 w-20" />
+								<Skeleton className="h-8 w-20" />
+								<Skeleton className="h-8 w-20" />
+								<Skeleton className="h-8 w-20" />
+								<Skeleton className="h-8 w-20" />
+							</>
+						)}
 					</ul>
 				</div>
 			</div>
