@@ -18,7 +18,7 @@ const About = () => {
 	}, [isInView]);
 
 	const about = useQuery(["about"], () =>
-		axios.get("http://192.168.1.10:1338/about")
+		axios.get("http://192.168.1.65:1338/about")
 	);
 
 	return (

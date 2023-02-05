@@ -1,9 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import Skeleton from "./Skeleton";
 
 const Footer = () => {
 	const about = useQuery(["main"], () =>
-		axios.get("http://192.168.1.10:1338/main")
+		axios.get("http://192.168.1.65:1338/main")
 	);
 
 	return (
@@ -11,7 +12,11 @@ const Footer = () => {
 			<div>
 				<h3 className="text-2xl">Bartłomiej Tutak</h3>
 				<p className="text-sm">
-					{about.data ? about.data.data.description : null}
+					{about.data ? (
+						about.data.data.description
+					) : (
+						<Skeleton className="w-10 h-5" />
+					)}
 				</p>
 			</div>
 			<div className="flex items-center gap-4">

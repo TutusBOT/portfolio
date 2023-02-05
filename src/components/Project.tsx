@@ -19,7 +19,7 @@ const Project = ({
 	live,
 }: ProjectI) => {
 	return (
-		<div className="bg-black-light py-6 w-[300px] md:w-full max-w-md px-4 border-white flex flex-col gap-4 shadow-lg">
+		<div className="bg-black-light py-6 h-full w-[300px] md:w-full max-w-2xl px-4 border-white flex flex-col justify-between gap-4 shadow-lg">
 			<h3 className="text-2xl">{title}</h3>
 			<a
 				className="max-w-full overflow-hidden"
@@ -33,7 +33,7 @@ const Project = ({
 					className="max-w-full scale-100 duration-500 ease-in-out hover:scale-110"
 				/>
 			</a>
-			<ul className="flex font-bold text-purple">
+			<ul className="flex flex-wrap font-bold text-purple">
 				{technologies.map((technology, i) => {
 					return (
 						<li key={i} className="flex items-center">

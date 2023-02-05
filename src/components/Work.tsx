@@ -18,7 +18,7 @@ const Work = () => {
 	}, [isInView]);
 
 	const projects = useQuery(["projects"], () =>
-		axios.get("http://192.168.1.10:1338/projects")
+		axios.get("http://192.168.1.65:1338/projects")
 	);
 
 	return (
@@ -37,7 +37,7 @@ const Work = () => {
 				Each one of them is hosted using <strong>Docker</strong> and{" "}
 				<strong>Docker Compose</strong>.
 			</p>
-			<div className="grid items-center justify-center md:px-16">
+			<div className="grid grid-cols-1 sm:grid-cols-2 items-center justify-items-center gap-8 md:px-16">
 				{projects.data ? (
 					projects.data.data.map((project: ProjectI) => {
 						return (

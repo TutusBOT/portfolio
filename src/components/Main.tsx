@@ -6,7 +6,7 @@ import Skeleton from "./Skeleton";
 
 const Main = () => {
 	const main = useQuery(["main"], () =>
-		axios.get("http://192.168.1.10:1338/main")
+		axios.get("http://192.168.1.65:1338/main")
 	);
 
 	return (
