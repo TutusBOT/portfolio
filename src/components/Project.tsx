@@ -28,7 +28,7 @@ const Project = ({
 				rel="noreferrer"
 			>
 				<img
-					src={`http://192.168.1.10:1338${image.url}`}
+					src={`http://192.168.1.65:1338${image.url}`}
 					alt={title}
 					className="max-w-full scale-100 duration-500 ease-in-out hover:scale-110"
 				/>
