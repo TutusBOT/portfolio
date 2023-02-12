@@ -32,7 +32,7 @@ const NavBar = () => {
 		<nav className="w-full fixed flex justify-between items-center py-8 px-4 lg:px-16 text-lg lg:text-xl bg-black-dark z-10 shadow-xl">
 			<a
 				href="mailto:bartlomiej.tutak0@gmail.com"
-				className="hover:text-purple transition-colors"
+				className="hover:text-purple transition-colors text-base sm:text-lg lg:text-xl"
 			>
 				bartlomiej.tutak0@gmail.com
 			</a>

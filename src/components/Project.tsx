@@ -7,6 +7,7 @@ export interface ProjectI {
 	description: string;
 	github: string;
 	live: string;
+	importance: number;
 	id: number;
 }
 
@@ -28,7 +29,7 @@ const Project = ({
 				rel="noreferrer"
 			>
 				<img
-					src={`http://192.168.1.65:1338${image.url}`}
+					src={`https://strapi.bartlomiejtutak.com${image.url}`}
 					alt={title}
 					className="max-w-full scale-100 duration-500 ease-in-out hover:scale-110"
 				/>

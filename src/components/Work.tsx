@@ -18,7 +18,7 @@ const Work = () => {
 	}, [isInView]);
 
 	const projects = useQuery(["projects"], () =>
-		axios.get("http://192.168.1.65:1338/projects")
+		axios.get("https://strapi.bartlomiejtutak.com/projects")
 	);
 
 	return (
@@ -39,20 +39,23 @@ const Work = () => {
 			</p>
 			<div className="grid grid-cols-1 sm:grid-cols-2 items-center justify-items-center gap-8 md:px-16">
 				{projects.data ? (
-					projects.data.data.map((project: ProjectI) => {
-						return (
-							<Project
-								key={project.id}
-								description={project.description}
-								image={project.image}
-								title={project.title}
-								technologies={project.technologies}
-								github={project.github}
-								live={project.live}
-								id={project.id}
-							/>
-						);
-					})
+					projects.data.data
+						.sort((a: ProjectI, b: ProjectI) => a.importance - b.importance)
+						.map((project: ProjectI) => {
+							return (
+								<Project
+									key={project.id}
+									description={project.description}
+									image={project.image}
+									title={project.title}
+									technologies={project.technologies}
+									github={project.github}
+									live={project.live}
+									id={project.id}
+									importance={project.importance}
+								/>
+							);
+						})
 				) : (
 					<Skeleton className="w-[300px] md:w-[450px] max-w-md h-[450px]" />
 				)}

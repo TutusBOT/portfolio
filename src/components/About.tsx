@@ -18,7 +18,7 @@ const About = () => {
 	}, [isInView]);
 
 	const about = useQuery(["about"], () =>
-		axios.get("http://192.168.1.65:1338/about")
+		axios.get("https://strapi.bartlomiejtutak.com/about")
 	);
 
 	return (

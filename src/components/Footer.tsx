@@ -4,7 +4,7 @@ import Skeleton from "./Skeleton";
 
 const Footer = () => {
 	const about = useQuery(["main"], () =>
-		axios.get("http://192.168.1.65:1338/main")
+		axios.get("https://strapi.bartlomiejtutak.com/main")
 	);
 
 	return (
