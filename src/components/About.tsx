@@ -20,6 +20,7 @@ const About = () => {
 	const about = useQuery(["about"], () =>
 		axios.get("https://strapi.bartlomiejtutak.com/about")
 	);
+	console.log(about.data?.data);
 
 	return (
 		<>
@@ -34,14 +35,14 @@ const About = () => {
 				>
 					About me
 				</h2>
-				<p className="text-xl -mt-8 text-center">
+				<div className="text-xl -mt-8 text-center">
 					{about.data ? (
 						about.data.data.short_description
 					) : (
 						<Skeleton className="w-[50ch] h-5" />
 					)}
-				</p>
-				<div className="grid md:grid-cols-2 gap-32">
+				</div>
+				<div className="grid md:grid-cols-2 gap-16 lg:gap-32">
 					<div className="flex flex-col gap-6 md:max-w-lg">
 						<h3 className="text-2xl">Get to know me</h3>
 						<p>
@@ -64,7 +65,24 @@ const About = () => {
 						/>
 					</div>
 					<div className="md:max-w-lg flex flex-col gap-6">
-						<h3 className="text-2xl">My skills</h3>
+						<h3 className="text-2xl">This is what I specialize in</h3>
+						<div className="flex flex-row gap-6 lg:gap-8">
+							{about.data?.data.main_skills.map(
+								(image: {
+									id: string;
+									url: string;
+									alternativeText?: string;
+								}) => (
+									<img
+										key={image.id}
+										src={`https://strapi.bartlomiejtutak.com${image.url}`}
+										className="max-w-[75px] sm:max-w-[100px] w-1/3 object-contain"
+										alt={image.alternativeText}
+									/>
+								)
+							)}
+						</div>
+						<h4 className="text-xl mt-8">I also worked with </h4>
 						<ul className="max-w-full flex flex-wrap gap-3">
 							{about.data ? (
 								about.data.data.skills.map((skill: string) => {
