@@ -82,7 +82,10 @@ const Contact = () => {
 						onChange={(e) => setMessage(e.target.value)}
 					/>
 				</div>
-				<Button className="self-end" type="submit">
+				<Button
+					className="self-end hover:bg-purple transition-colors"
+					type="submit"
+				>
 					SEND
 				</Button>
 			</form>
