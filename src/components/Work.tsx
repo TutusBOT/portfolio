@@ -25,7 +25,7 @@ const Work = () => {
 		<>
 			<div id="work"></div>
 			<motion.section
-				className="w-full max-w-full flex flex-col gap-16 px-8 py-32 duration-500 translate-y-1/3"
+				className="w-full max-w-full flex flex-col gap-16 px-8 py-32 duration-500 translate-y-32 sm:translate-y-1/3"
 				animate={entryAnimation}
 			>
 				<h2 className="text-4xl text-center flex justify-center" ref={ref}>
