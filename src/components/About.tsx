@@ -26,7 +26,7 @@ const About = () => {
 		<>
 			<div id="about"></div>
 			<motion.section
-				className="flex flex-col items-center gap-16 py-32 px-8 opacity-0 duration-500 translate-y-1/3"
+				className="flex flex-col items-center gap-16 py-32 px-8 opacity-0 duration-500 translate-y-32 sm:translate-y-1/3"
 				animate={entryAnimation}
 			>
 				<h2
