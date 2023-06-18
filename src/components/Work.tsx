@@ -44,7 +44,7 @@ const Work = () => {
 						}}
 						initial="hidden"
 						animate={shortDescriptionControls}
-						transition={{ duration: 0.5, delay: 0.25 }}
+						transition={{ duration: 1, delay: 0.5 }}
 					></motion.div>
 				</p>
 				<motion.div
