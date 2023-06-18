@@ -8,7 +8,7 @@ import {
 	motion,
 	useAnimation,
 } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Link from "./Link/Link";
 import Skeleton from "./Skeleton";
 
@@ -22,21 +22,23 @@ const About = () => {
 	const opacity = useTransform(scrollYProgress, [1, 0.05, 0], [1, 1, 0]);
 	const scale = useTransform(scrollYProgress, [1, 0.05, 0], [1, 1, 0.8]);
 
-	const xDescription = useTransform(scrollYProgress, [1, 0.65], ["-50%", "0%"]);
-	const scaleDescription = useTransform(scrollYProgress, [1, 0.85], [0.6, 1]);
-	const opacityDescription = useTransform(scrollYProgress, [1, 0.85], [0, 1]);
+	const xDescription = useTransform(scrollYProgress, [1, 0.8], ["-50%", "0%"]);
+	const scaleDescription = useTransform(scrollYProgress, [1, 0.8], [0.6, 1]);
+	const opacityDescription = useTransform(scrollYProgress, [1, 0.8], [0, 1]);
 
-	const xSkills = useTransform(scrollYProgress, [0.6, 0.4], ["50%", "0%"]);
-	const scaleSkills = useTransform(scrollYProgress, [0.6, 0.4], [0.6, 1]);
-	const opacitySkills = useTransform(scrollYProgress, [0.6, 0.4], [0, 1]);
+	const xSkills = useTransform(scrollYProgress, [1, 0.8], ["50%", "0%"]);
+	const scaleSkills = useTransform(scrollYProgress, [1, 0.8], [0.6, 1]);
+	const opacitySkills = useTransform(scrollYProgress, [1, 0.8], [0, 1]);
 
 	const isInView = useInView(ref, { once: true });
 	const shortDescriptionControls = useAnimation();
+	const headingControls = useAnimation();
 	scrollYProgress.onChange((prog) => console.log(prog));
 
 	useEffect(() => {
 		if (isInView) {
 			shortDescriptionControls.start("visible");
+			headingControls.start("visible");
 		}
 	}, [isInView]);
 
@@ -46,20 +48,25 @@ const About = () => {
 
 	return (
 		<>
-			{/* <div id="about"></div> */}
 			<motion.section
-				className="relative  py-32 px-8 opacity-0 duration-500 translate-y-32 sm:translate-y-1/3 h-[300vh]"
-				// animate={entryAnimation}
+				className="relative  py-32 px-8 opacity-0 duration-500 translate-y-32 sm:translate-y-1/3 min-h-[200vh]"
 				ref={sectionRef}
 				style={{ opacity, scale, translateY: 0 }}
 			>
 				<div className="sticky flex flex-col items-center gap-16 overflow-hidden top-1/4">
-					<h2
+					<motion.h2
 						className="w-max text-4xl text-center relative after:absolute after:top-full after:left-0 after:w-full after:h-1 after:bg-purple after:content-['']"
 						ref={ref}
+						variants={{
+							hidden: { opacity: 0 },
+							visible: { opacity: 1 },
+						}}
+						initial="hidden"
+						animate={headingControls}
+						transition={{ duration: 0.5, delay: 0.25 }}
 					>
 						About me
-					</h2>
+					</motion.h2>
 					<div className="relative -mt-8 text-xl text-center">
 						{about.data ? (
 							about.data.data.short_description
