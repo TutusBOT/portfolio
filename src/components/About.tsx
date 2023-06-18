@@ -52,6 +52,7 @@ const About = () => {
 				ref={sectionRef}
 				style={{ opacity, scale }}
 			>
+				<div id="about" className="absolute top-0 sm:top-[20%]"></div>
 				<div className="sticky flex flex-col items-center gap-16 overflow-hidden top-1/4">
 					<motion.h2
 						className="w-max text-4xl text-center relative after:absolute after:top-full after:left-0 after:w-full after:h-1 after:bg-purple after:content-['']"
@@ -83,10 +84,7 @@ const About = () => {
 							transition={{ duration: 0.5, delay: 0.25 }}
 						></motion.div>
 					</div>
-					<div
-						className="relative grid gap-16 md:grid-cols-2 lg:gap-32"
-						id="about"
-					>
+					<div className="relative grid gap-16 md:grid-cols-2 lg:gap-32">
 						<motion.div
 							className="z-10 flex flex-col gap-6 md:max-w-lg"
 							style={{
