@@ -49,9 +49,9 @@ const About = () => {
 	return (
 		<>
 			<motion.section
-				className="relative  py-32 px-8 opacity-0 duration-500 translate-y-32 sm:translate-y-1/3 min-h-[200vh]"
+				className="relative  py-32 px-8 opacity-0 duration-500 min-h-[150vh]"
 				ref={sectionRef}
-				style={{ opacity, scale, translateY: 0 }}
+				style={{ opacity, scale }}
 			>
 				<div className="sticky flex flex-col items-center gap-16 overflow-hidden top-1/4">
 					<motion.h2
@@ -84,7 +84,10 @@ const About = () => {
 							transition={{ duration: 0.5, delay: 0.25 }}
 						></motion.div>
 					</div>
-					<div className="relative grid gap-16 md:grid-cols-2 lg:gap-32">
+					<div
+						className="relative grid gap-16 md:grid-cols-2 lg:gap-32"
+						id="about"
+					>
 						<motion.div
 							className="z-10 flex flex-col gap-6 md:max-w-lg"
 							style={{
