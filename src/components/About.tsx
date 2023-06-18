@@ -33,7 +33,6 @@ const About = () => {
 	const isInView = useInView(ref, { once: true });
 	const shortDescriptionControls = useAnimation();
 	const headingControls = useAnimation();
-	scrollYProgress.onChange((prog) => console.log(prog));
 
 	useEffect(() => {
 		if (isInView) {
