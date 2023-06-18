@@ -11,7 +11,7 @@ import "./index.css";
 
 function App() {
 	return (
-		<div className="w-screen bg-black text-white font-comforta overflow-hidden flex flex-col max-w-full">
+		<div className="w-screen bg-black text-white font-comforta flex flex-col max-w-full">
 			<Cursor />
 			<NavBar />
 			<Main />
