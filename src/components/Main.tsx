@@ -3,15 +3,29 @@ import axios from "axios";
 import Link from "./Link/Link";
 import SideBar from "./SideBar";
 import Skeleton from "./Skeleton";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const Main = () => {
+	const ref = useRef<HTMLHeadingElement>(null);
+	const { scrollYProgress } = useScroll({
+		target: ref,
+		offset: ["end end", "end start"],
+	});
+	const opacity = useTransform(scrollYProgress, [0, 0.3, 0.8], [1, 1, 0]);
+	const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
+
 	const main = useQuery(["main"], () =>
 		axios.get("https://strapi.bartlomiejtutak.com/main")
 	);
 
 	return (
-		<main className="w-full h-screen" id="home">
-			<div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full px-8 flex flex-col items-center gap-6">
+		<motion.main className="w-full h-screen" id="home" style={{ opacity }}>
+			<motion.div
+				className="absolute top-1/2 left-1/2 transform text-center w-full px-8 flex flex-col items-center gap-6"
+				ref={ref}
+				style={{ scale, x: "-50%", y: "-50%" }}
+			>
 				<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl">
 					<span className="text-purple">Hi, I&#39;m</span> Bartłomiej Tutak.
 				</h1>
@@ -29,7 +43,7 @@ const Main = () => {
 					className="w-[300px] mt-8"
 					variant="filled"
 				/>
-			</div>
+			</motion.div>
 			<SideBar />
 			<div className="absolute top-[90%] w-full flex justify-center animate-bounce">
 				<svg width="64" height="64" viewBox="0 0 512 512">
@@ -39,7 +53,7 @@ const Main = () => {
 					></path>
 				</svg>
 			</div>
-		</main>
+		</motion.main>
 	);
 };
 export default Main;
